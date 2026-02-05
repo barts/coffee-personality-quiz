@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 4: Warm & Cozy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Lora', serif;
+    background: linear-gradient(180deg, #F5EDE3, #EDE0D0);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #FFFBF5;
+    border-radius: 16px;
+    padding: 52px 44px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 12px 40px rgba(139,109,74,0.12);
+  }
+  .label {
+    display: inline-block;
+    color: #A0785A;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #3D2B1F;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .subtitle {
+    color: #A0896E;
+    font-size: 14px;
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+  .question {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4A3728;
+    margin-bottom: 24px;
+  }
+  .option {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #E6D9C8;
+    border-radius: 10px;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7A6350;
+    background: #FFFDF9;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  .option:hover {
+    border-color: #A0785A;
+    background: #FFF8EE;
+    color: #3D2B1F;
+  }
+  .progress {
+    display: flex;
+    gap: 8px;
+    margin-top: 32px;
+    justify-content: center;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #E2D5C3;
+  }
+  .dot.active { background: #A0785A; }
+  .style-tag {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #C4B39E;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="label">Style 4: Warm & Cozy</span>
+  <h1>What's Your Coffee Personality?</h1>
+  <p class="subtitle">Answer 6 quick questions to find your perfect brew</p>
+  <p class="question">Pick your ideal Saturday morning:</p>
+  <button class="option">Up early, chasing adventure</button>
+  <button class="option">Slow start with a good book</button>
+  <button class="option">Yoga, smoothie, zen vibes</button>
+  <button class="option">Saturday morning? I'm still up from Friday</button>
+  <button class="option">Farmers market for artisan beans</button>
+  <div class="progress">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+</body>
+</html>

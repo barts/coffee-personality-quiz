@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 2: Minimal & Clean</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FAFAFA;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: white;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 56px 48px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .label {
+    display: inline-block;
+    color: #999;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #111;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    color: #999;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+  .question {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 28px;
+  }
+  .option {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    border: 1px solid #E8E8E8;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    background: white;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+  }
+  .option:hover {
+    border-color: #111;
+    color: #111;
+  }
+  .progress-text {
+    margin-top: 36px;
+    font-size: 12px;
+    color: #CCC;
+    font-weight: 400;
+  }
+  .style-tag {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #ccc;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="label">Style 2: Minimal & Clean</span>
+  <h1>What's Your Coffee Personality?</h1>
+  <p class="subtitle">6 questions. Your perfect brew awaits.</p>
+  <p class="question">Pick your ideal Saturday morning:</p>
+  <button class="option">Up early, chasing adventure</button>
+  <button class="option">Slow start with a good book</button>
+  <button class="option">Yoga, smoothie, zen vibes</button>
+  <button class="option">Saturday morning? I'm still up from Friday</button>
+  <button class="option">Farmers market for artisan beans</button>
+  <p class="progress-text">1 of 6</p>
+</div>
+</body>
+</html>
