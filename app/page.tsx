@@ -295,7 +295,7 @@ export default function Home() {
         >
           <div
             className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full text-4xl"
-            style={{ background: "#FFF3E0" }}
+            style={{ background: "#EDE9FE" }}
           >
             ☕
           </div>
@@ -359,8 +359,8 @@ export default function Home() {
                   color: "var(--color-muted)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#4ECDC4";
-                  e.currentTarget.style.background = "#F0FFFE";
+                  e.currentTarget.style.borderColor = "#8B5E3C";
+                  e.currentTarget.style.background = "#FDF8F4";
                   e.currentTarget.style.color = "var(--color-dark)";
                 }}
                 onMouseLeave={(e) => {
@@ -439,7 +439,7 @@ export default function Home() {
 
         <div
           className="mx-auto mb-8 rounded-2xl px-8 py-5"
-          style={{ background: "#FFF8EE" }}
+          style={{ background: "#F5F3FF" }}
         >
           <p
             className="mb-1 text-sm uppercase tracking-wider"
