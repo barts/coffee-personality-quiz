@@ -240,8 +240,10 @@ export default function Home() {
   const [screen, setScreen] = useState<Screen>("welcome");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selections, setSelections] = useState<Personality[]>([]);
+  const [name, setName] = useState("");
 
   function handleStart() {
+    if (!name.trim()) return;
     setScreen("quiz");
     setCurrentQuestion(0);
     setSelections([]);
@@ -255,6 +257,31 @@ export default function Home() {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setScreen("results");
+      // Auto-save result
+      const counts: Partial<Record<Personality, number>> = {};
+      for (const p of newSelections) {
+        counts[p] = (counts[p] || 0) + 1;
+      }
+      let maxCount = 0;
+      let winner: Personality = newSelections[0];
+      for (const p of newSelections) {
+        const c = counts[p] || 0;
+        if (c > maxCount) {
+          maxCount = c;
+          winner = p;
+        }
+      }
+      const r = results[winner];
+      fetch("/api/results", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          personality: winner,
+          coffee: r.coffee,
+          tagline: r.tagline,
+        }),
+      }).catch(() => {});
     }
   }
 
@@ -283,6 +310,7 @@ export default function Home() {
     setScreen("welcome");
     setCurrentQuestion(0);
     setSelections([]);
+    setName("");
   }
 
   // --- Welcome Screen ---
@@ -306,14 +334,35 @@ export default function Home() {
             What&rsquo;s Your Coffee Personality?
           </h1>
           <p
-            className="mb-8 text-base italic"
+            className="mb-6 text-base italic"
             style={{ color: "var(--color-light-muted)" }}
           >
             Answer 6 quick questions to discover your perfect brew
           </p>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") handleStart(); }}
+            className="mx-auto mb-4 block w-full max-w-xs rounded-xl border border-solid px-4 py-3 text-center text-base outline-none"
+            style={{
+              fontFamily: "var(--font-body)",
+              borderColor: "#E6D9C8",
+              background: "#FFFDF9",
+              color: "var(--color-dark)",
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = "#8B7AA0";
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = "#E6D9C8";
+            }}
+          />
           <button
             onClick={handleStart}
-            className="cursor-pointer rounded-full px-10 py-4 text-lg font-semibold text-white transition-transform hover:scale-105"
+            disabled={!name.trim()}
+            className="cursor-pointer rounded-full px-10 py-4 text-lg font-semibold text-white transition-transform hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
             style={{
               fontFamily: "var(--font-body)",
               background: "linear-gradient(135deg, var(--color-pink), var(--color-teal))",
