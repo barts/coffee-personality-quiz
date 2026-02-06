@@ -104,7 +104,7 @@ export default function AdminPage() {
                       className="px-4 py-3"
                       style={{ color: "var(--color-muted)" }}
                     >
-                      {new Date(r.created_at).toLocaleDateString()}
+                      {new Date(r.created_at).toLocaleString()}
                     </td>
                   </tr>
                 ))}
