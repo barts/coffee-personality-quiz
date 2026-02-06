@@ -290,12 +290,12 @@ export default function Home() {
     return (
       <div className="flex min-h-screen items-center justify-center p-5">
         <div
-          className="w-full max-w-[520px] rounded-3xl bg-white p-12 text-center"
-          style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }}
+          className="w-full max-w-[520px] rounded-2xl p-12 text-center"
+          style={{ background: "#FFFBF5", boxShadow: "0 12px 40px rgba(139,109,74,0.12)" }}
         >
           <div
             className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full text-4xl"
-            style={{ background: "#EDE9FE" }}
+            style={{ background: "#E8E0F0" }}
           >
             ☕
           </div>
@@ -334,8 +334,8 @@ export default function Home() {
     return (
       <div className="flex min-h-screen items-center justify-center p-5">
         <div
-          className="w-full max-w-[520px] rounded-3xl bg-white p-12"
-          style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.15)" }}
+          className="w-full max-w-[520px] rounded-2xl p-12"
+          style={{ background: "#FFFBF5", boxShadow: "0 12px 40px rgba(139,109,74,0.12)" }}
         >
           <p
             className="mb-6 text-xl font-semibold"
@@ -352,20 +352,21 @@ export default function Home() {
               <button
                 key={i}
                 onClick={() => handleAnswer(a.personality)}
-                className="cursor-pointer rounded-2xl border-2 border-solid bg-white px-5 py-4 text-left text-base font-medium transition-all hover:-translate-y-0.5"
+                className="cursor-pointer rounded-xl border border-solid px-5 py-4 text-left text-base font-medium transition-all hover:-translate-y-0.5"
                 style={{
                   fontFamily: "var(--font-body)",
-                  borderColor: "#eee",
+                  borderColor: "#E6D9C8",
+                  background: "#FFFDF9",
                   color: "var(--color-muted)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#8B5E3C";
-                  e.currentTarget.style.background = "#FDF8F4";
+                  e.currentTarget.style.borderColor = "#8B7AA0";
+                  e.currentTarget.style.background = "#F5F0FA";
                   e.currentTarget.style.color = "var(--color-dark)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#eee";
-                  e.currentTarget.style.background = "white";
+                  e.currentTarget.style.borderColor = "#E6D9C8";
+                  e.currentTarget.style.background = "#FFFDF9";
                   e.currentTarget.style.color = "var(--color-muted)";
                 }}
               >
@@ -383,7 +384,7 @@ export default function Home() {
                 className="h-2.5 w-2.5 rounded-full transition-colors"
                 style={{
                   background:
-                    i <= currentQuestion ? "var(--color-teal)" : "#eee",
+                    i <= currentQuestion ? "#8B7AA0" : "#E2D5C3",
                 }}
               />
             ))}
@@ -439,7 +440,7 @@ export default function Home() {
 
         <div
           className="mx-auto mb-8 rounded-2xl px-8 py-5"
-          style={{ background: "#F5F3FF" }}
+          style={{ background: "#F0EBE3" }}
         >
           <p
             className="mb-1 text-sm uppercase tracking-wider"
